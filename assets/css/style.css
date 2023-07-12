@@ -68,6 +68,9 @@ aside {
     width: 21%;
     padding: 3.5rem 0.5rem 0 0.5rem;
     font-family: 'Nanum Pen Script', cursive;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 aside form {
@@ -102,6 +105,10 @@ h2 span:nth-child(2) {
     border-radius: 1rem;
 }
 
+#search-gm::placeholder {
+    color: rgb(239, 228, 255);
+}
+
 .submit-btn {
     width: 100%;
     display: flex;
@@ -109,7 +116,7 @@ h2 span:nth-child(2) {
 }
 
 form button {
-    width: 70%;
+    width: 60%;
     border: none;
     border-radius: 1rem;
     margin-top: 1.2rem;
@@ -130,6 +137,32 @@ form button:active {
     transform: scale(0.9);
 }
 
+.search-history {
+    width: 100%;
+}
+
+.searched-history button {
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    margin: 1.2rem auto 0;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.2rem 0;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 1.5rem;
+    transition: 0.3s ease;
+}
+
+.searched-history button:hover {
+    color: rgb(255, 0, 111);
+}
+
+.searched-history button:active {
+    transform: scale(0.9);
+}
 
 
 
