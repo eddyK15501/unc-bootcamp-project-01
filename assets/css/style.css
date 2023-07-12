@@ -1,5 +1,5 @@
 /* GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Nanum+Pen+Script&display=swap');
 
 /* UNIVERSAL */
 * {
@@ -12,6 +12,7 @@
 body {
     font-family: 'Indie Flower', cursive;
     background-color: #000;
+    color: #fff;
 }
 
 /* NAVBAR */
@@ -39,10 +40,14 @@ nav a:visited {
 }
 
 #nav-title:hover {
+    color: rgb(255, 0, 111);
+}
+
+#nav-gifs:hover {
     color: rgb(179, 0, 255);
 }
 
-li a:hover {
+#nav-memes:hover {
     color: rgb(255, 0, 221);
 }
 
@@ -56,4 +61,99 @@ nav ul {
 
 li a {
     font-size: 1.7rem;
+}
+
+/* ASIDE */
+aside {
+    width: 21%;
+    padding: 3.5rem 0.5rem 0 0.5rem;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+aside form {
+    width: 100%;
+}
+
+aside label {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+}
+
+aside h2 {
+    margin-bottom: 0.8rem;
+}
+
+h2 span:nth-child(1) {
+    color: rgb(179, 0, 255);
+}
+
+h2 span:nth-child(2) {
+    color: rgb(255, 0, 221);
+}
+
+#search-gm {
+    font-family: 'Indie Flower', cursive;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form button {
+    width: 70%;
+    border: none;
+    border-radius: 1rem;
+    margin-top: 1.2rem;
+    font-size: 1.5rem;
+    font-family: 'Indie Flower', cursive;
+    padding: 0.2rem 0;
+    background-image: linear-gradient(90deg, rgb(179, 0, 255), rgb(255, 0, 221));
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+form button:hover {
+    color: #000;
+}
+
+form button:active {
+    transform: scale(0.9);
+}
+
+
+
+
+/* MEDIA QUERY */
+@media screen and (max-width: 675px) {
+    nav {
+        padding: 0.8rem 1.9rem 0.8rem 1.9rem;
+    }
+
+    nav ul {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 567px) {
+    nav {
+        flex-direction: column;
+    }
+
+    #nav-title {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        gap: 3rem;
+    }
 }
