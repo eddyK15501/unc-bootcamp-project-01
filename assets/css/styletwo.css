@@ -1,0 +1,49 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+/* BODY */
+body {
+    display: grid;
+    justify-self: center;
+    padding: 5rem 0 5rem;
+    font-size: 1.2rem;
+}
+
+/* DIV */
+.idiots {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#i-one {
+    border: 1px solid black;
+    width: 800px;
+    height: 500px;
+}
+
+#i-two {
+    border: 1px solid black;
+    width: 500px;
+    height: 450px;
+}
+
+#i-three {
+    border: 1px solid black;
+    width: 700px;
+    height: 650px;
+    margin-bottom: 38rem;
+}
+
+p {
+    font-family: 'Source Code Pro', monospace;
+}
+
+p:nth-child(1) {
+    margin-bottom: 5.5rem;
+}
+
+p:last-child {
+    font-size: 1.3rem;
+}
