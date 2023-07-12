@@ -1,4 +1,4 @@
-# Coding Bootcamp Project One - remade
+# Project One
 
 ## Description
 
