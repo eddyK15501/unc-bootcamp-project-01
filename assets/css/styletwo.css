@@ -19,8 +19,8 @@ body {
 
 #i-one {
     border: 1px solid black;
-    width: 800px;
-    height: 500px;
+    width: 700px;
+    height: 400px;
 }
 
 #i-two {
@@ -31,9 +31,33 @@ body {
 
 #i-three {
     border: 1px solid black;
-    width: 700px;
-    height: 650px;
-    margin-bottom: 38rem;
+    width: 450px;
+    height: 300px;
+}
+
+#i-four {
+    border: 1px solid black;
+    width: 500px;
+    height: 350px;
+}
+
+#i-five {
+    border: 1px solid black;
+    width: 400px;
+    height: 300px;
+}
+
+#i-six {
+    border: 1px solid black;
+    width: 600px;
+    height: 400px;
+}
+
+#i-seven {
+    border: 1px solid black;
+    width: 500px;
+    height: 300px;
+    margin-bottom: 48rem;
 }
 
 p {

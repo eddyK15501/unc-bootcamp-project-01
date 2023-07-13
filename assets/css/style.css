@@ -181,7 +181,7 @@ form button:active {
 
 /* SECTION */
 section {
-    width: 75%;
+    width: 79%;
 }
 
 /* GIF  */
@@ -191,7 +191,7 @@ section {
     align-items: center;
 }
 
-#gif-icon-img { 
+#gifs-icon-img { 
     width: 130px;
     height: 130px;
 }
@@ -203,9 +203,9 @@ section {
     align-items: center;
 }
 
-#meme-icon-img {
-    width: 90px;
-    height: 90px;
+#memes-icon-img {
+    width: 80px;
+    height: 80px;
 }
 
 

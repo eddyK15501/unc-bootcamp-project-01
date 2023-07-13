@@ -1,4 +1,4 @@
-# Project One
+# Project One - Gifs and Memes
 
 ## Description
 #### Still in progress
