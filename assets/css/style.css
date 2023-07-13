@@ -8,6 +8,11 @@
     margin: 0;
 }
 
+/* HTML */
+html {
+    scroll-behavior: smooth;
+}
+
 /* BODY */
 body {
     font-family: 'Indie Flower', cursive;
@@ -17,12 +22,15 @@ body {
 
 /* NAVBAR */
 nav {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 5rem 0.8rem 1.9rem;
     font-size: 2.2rem;
     background-color: #000;
+    position: fixed;
+    top: 0;
 }
 
 nav a {
@@ -61,6 +69,13 @@ nav ul {
 
 li a {
     font-size: 1.7rem;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    position: relative;
+    top: 3.5rem;
 }
 
 /* ASIDE */
@@ -164,6 +179,34 @@ form button:active {
     transform: scale(0.9);
 }
 
+/* SECTION */
+section {
+    width: 75%;
+}
+
+/* GIF  */
+.gif-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gif-icon-img { 
+    width: 130px;
+    height: 130px;
+}
+
+/* MEME */
+.memes-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#meme-icon-img {
+    width: 90px;
+    height: 90px;
+}
 
 
 /* MEDIA QUERY */

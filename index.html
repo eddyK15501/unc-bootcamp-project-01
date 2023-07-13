@@ -11,46 +11,71 @@
 </head>
 <body>
     <nav>
-        <a id="nav-title" href="./assets/pages/pagetwo.html">'${Project_ONE}'</a>
+        <a id="nav-title" href="./assets/pages/pagetwo.html" title="DO NOT CLICK. YOU'VE BEEN WARNED.">'${Project_ONE}'</a>
         <ul>
-            <li>
+            <li title="Gifs">
                 <a id="nav-gifs" href="#gifs">Gifs</a>
             </li>
-            <li>
+            <li title="Memes">
                 <a id="nav-memes" href="#memes">Memes</a>
             </li>
         </ul>
     </nav>
-
-    <aside>
-        <form class="search-form">
-            <label for="search-gm">
-                <h2>Search for <span>gifs</span> + <span>memes</span></h2>
-            </label>
-            <input id="search-gm" type="text" placeholder="coding">
-            <div class="submit-btn">
-                <button type="submit">Search</button>
-            </div>
-        </form>
-
-        <div class="searched-history">
-            <button>coding</button>
-            <button>programming</button>
-            <button>sweaty</button>
-            <button>funny</button>
-            <button>dogs</button>
-            <button>chuck norris</button>
-        </div>
-    </aside>
-
-
-
-
+    
     <main>
-        <section id="gifs"></section>
-        <section id="memes"></section>
-    </main>
+        <aside>
+            <form class="search-form">
+                <label for="search-gm">
+                    <h2>Search for <span>gifs</span> + <span>memes</span></h2>
+                </label>
+                <input id="search-gm" type="text" placeholder="coding">
+                <div class="submit-btn">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
 
+            <div class="searched-history">
+                <button>coding</button>
+                <button>programming</button>
+                <button>dogs</button>
+                <button>sweaty</button>
+                <button>napolean dynamite</button>
+                <button>chuck norris</button>
+                <button>dance</button>
+            </div>
+        </aside>
+
+        <section>
+            <div id="gifs" class="gif-main-container">
+                <div class="gif-header-container">
+                    <img id="gif-icon-img" src="./assets/images/gif.png" alt="gif title image">
+                </div>
+
+
+
+
+                <div class="gif-container">
+
+                </div>
+            </div>
+
+
+
+            <div id="memes" class="memes-main-container">
+                <div class="memes-header-container">
+                    <img id="meme-icon-img" src="./assets/images/icons8-doge-96.png" alt="meme title image">
+                </div>
+
+
+                
+
+                <div class="meme-container">
+
+                </div>
+            </div>
+
+        </section>
+    </main>
 
 
 
