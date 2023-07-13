@@ -1,6 +1,7 @@
 # Project One
 
 ## Description
+#### Still in progress
 My rendition of a sample Project One. HTML, CSS, and JavaScript. No CSS frameworks utilized.
 
 #### Link to the deployed application:
