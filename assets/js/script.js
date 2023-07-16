@@ -19,26 +19,37 @@ const fetchGifs = (searchTerm) => {
     const requestURL = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=20&&api_key=${giphyAPIKey}`
 
     fetch(requestURL)
-        .then(res => res.json())
+        .then(res => {
+            sectionContainer.classList.remove('hide')
+            return res.json()
+        })
         .then(data => {
             gifContainer.innerHTML = ''
 
             let gifsRetrieved = data.data
 
-            gifsRetrieved.forEach(gif => {
-                let anchorTag = document.createElement('a')
-                anchorTag.setAttribute('href', gif.url)
-                anchorTag.setAttribute('target', '_blank')
-                let gifImg = document.createElement('img')
-                gifImg.setAttribute('src', gif.images.fixed_height.webp)
-                gifImg.setAttribute('alt', gif.title)
-                anchorTag.append(gifImg)
-                gifContainer.append(anchorTag)
-            })
+            if (gifsRetrieved.length !== 0) {
+                gifsRetrieved.forEach(gif => {
+                    let anchorTag = document.createElement('a')
+                    anchorTag.setAttribute('href', gif.url)
+                    anchorTag.setAttribute('target', '_blank')
+                    let gifImg = document.createElement('img')
+                    gifImg.setAttribute('src', gif.images.fixed_height.webp)
+                    gifImg.setAttribute('alt', gif.title)
+                    anchorTag.append(gifImg)
+                    gifContainer.append(anchorTag)
+                })
+            } else {
+                let h2Tag = document.createElement('h2')
+                h2Tag.setAttribute('id', 'no-gifs-found')
+                h2Tag.innerText = 'No search results were found'
+                gifContainer.append(h2Tag)
+            }
+
             fetchMemes(searchTerm)
             addSearchTerm(searchTerm)
 
-            // console.log(gifsRetrieved)
+            console.log(gifsRetrieved)
         })
 }
 
@@ -53,18 +64,25 @@ const fetchMemes = (searchTerm) => {
 
             let memesRetrieved = data.memes
             
-            memesRetrieved.forEach(meme => {
-                let anchorTag = document.createElement('a')
-                anchorTag.setAttribute('href', meme.url)
-                anchorTag.setAttribute('target', '_blank')
-                let memeImg = document.createElement('img')
-                memeImg.setAttribute('src', meme.url)
-                memeImg.setAttribute('alt', meme.description)
-                // memeImg.setAttribute('referrerpolicy', 'no-referrer')
-                anchorTag.append(memeImg)
-                memeContainer.append(anchorTag)
-            })
-            
+            if (memesRetrieved.length !== 0) {
+                memesRetrieved.forEach(meme => {
+                    let anchorTag = document.createElement('a')
+                    anchorTag.setAttribute('href', meme.url)
+                    anchorTag.setAttribute('target', '_blank')
+                    let memeImg = document.createElement('img')
+                    memeImg.setAttribute('src', meme.url)
+                    memeImg.setAttribute('alt', meme.description)
+                    // memeImg.setAttribute('referrerpolicy', 'no-referrer')
+                    anchorTag.append(memeImg)
+                    memeContainer.append(anchorTag)
+                })
+            } else {
+                let h2Tag = document.createElement('h2')
+                h2Tag.setAttribute('id', 'no-memes-found')
+                h2Tag.innerText = 'No search results were found'
+                memeContainer.append(h2Tag)
+            }
+
             console.log(memesRetrieved)
         })
 }
@@ -175,7 +193,6 @@ const searchKeyword = (event) => {
     console.log(keyword)
 
     if (keyword) {
-        sectionContainer.classList.remove('hide')
         fetchGifs(keyword)
     } else {
         alert('Please enter a keyword to search')

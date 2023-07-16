@@ -187,13 +187,14 @@ section {
 
 /* GIF  */
 .gif-main-container {
-    padding: 1.5rem 0 2.5rem;
+    padding: 2.5rem 0 2.5rem;
 }
 
 .gif-header-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: 3.5rem;
 }
 
 .gif-container {
@@ -205,6 +206,10 @@ section {
     height: 130px;
 }
 
+#no-gifs-found {
+    margin-left: 1.5rem;
+}
+
 /* MEME */
 .memes-main-container {
     padding: 4.5rem 2.5rem 2.5rem;
@@ -212,14 +217,20 @@ section {
 
 .memes-header-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 3rem;
+    margin-right: 3.5rem;
 }
 
 #memes-icon-img {
     width: 80px;
     height: 80px;
+}
+
+#no-memes-found {
+    text-align: end;
+    margin-right: 2rem;
 }
 
 /* GRID CLASSES */
