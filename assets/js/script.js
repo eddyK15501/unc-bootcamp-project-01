@@ -4,6 +4,7 @@ const searchInput = document.getElementById('search-gm')
 const gifContainer = document.querySelector('.gif-container')
 const memeContainer = document.querySelector('.meme-container')
 const sectionContainer = document.querySelector('.section-container')
+const searchedHistory = document.querySelector('.searched-history')
 
 // personal API Keys
 const giphyAPIKey = '6M9rze3zIiNSUB8y9OBLeDnETWFBztWy';
@@ -14,12 +15,14 @@ let searchHistory = []
 let keyword = ''
 
 // fetch Gifs from Giphy API, and append them to the page
-const fetchGifs = () => {
-    const requestURL = `https://api.giphy.com/v1/gifs/search?q=${keyword}&limit=20&&api_key=${giphyAPIKey}`
+const fetchGifs = (searchTerm) => {
+    const requestURL = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=20&&api_key=${giphyAPIKey}`
 
     fetch(requestURL)
         .then(res => res.json())
         .then(data => {
+            gifContainer.innerHTML = ''
+
             let gifsRetrieved = data.data
 
             gifsRetrieved.forEach(gif => {
@@ -32,17 +35,22 @@ const fetchGifs = () => {
                 anchorTag.append(gifImg)
                 gifContainer.append(anchorTag)
             })
+            fetchMemes(searchTerm)
+            addSearchTerm(searchTerm)
+
             // console.log(gifsRetrieved)
         })
 }
 
 // fetch memes from HumorAPI and append them to the page 
-const fetchMemes = () => {
-    const requestURL = `https://api.humorapi.com/memes/search?api-key=${memesAPIKey}&keywords=${keyword}&media-type=image&number=10`
+const fetchMemes = (searchTerm) => {
+    const requestURL = `https://api.humorapi.com/memes/search?api-key=${memesAPIKey}&keywords=${searchTerm}&media-type=image&number=10`
 
     fetch (requestURL)
         .then(res => res.json())
         .then(data => { 
+            memeContainer.innerHTML = ''
+
             let memesRetrieved = data.memes
             
             memesRetrieved.forEach(meme => {
@@ -61,6 +69,99 @@ const fetchMemes = () => {
         })
 }
 
+// function that capitalizes the first letter of the word/words, given as a parameter
+const caseSensitivity = (searchTerm) => {
+    let updateTerm = searchTerm.toLowerCase().split(" ");
+    let returnTerm = '';
+    
+    for (let i = 0; i < updateTerm.length; i++) {
+        updateTerm[i] = updateTerm[i][0].toUpperCase() + updateTerm[i].slice(1);
+        returnTerm += " " + updateTerm[i];
+    }
+    // trim extra space, within the string being returned
+    return returnTerm.trim();
+}
+
+// prepend a button into the search history if the keyword has not been searched before
+const addSearchTerm = (searchTerm) => {
+    let newSearchTerm = caseSensitivity(searchTerm)
+
+    let previouslySearched = false
+
+    for (let i = 0; i < searchHistory.length; i++) {
+        if (searchHistory[i] === newSearchTerm) {
+            previouslySearched = true
+        }
+    }
+
+    if (!previouslySearched) {
+        searchHistory.unshift(newSearchTerm)
+
+        const searchBtn = document.createElement('button')
+        searchBtn.classList.add('search-btn')
+        searchBtn.innerText = `${searchHistory[0]}`
+        searchedHistory.prepend(searchBtn)
+    } else {
+        return
+    }
+
+    if (searchHistory.length > 7) {
+        let nodes = document.querySelectorAll('.search-btn')
+        let last = nodes[nodes.length - 1]
+        last.remove()
+
+        searchHistory.pop()
+    }
+
+    localStorage.setItem('keywords', JSON.stringify(searchHistory))
+
+    document.querySelectorAll('.search-btn').forEach(btn => {
+        btn.removeEventListener('click', fetchGifs)
+        btn.addEventListener('click', (event) => {
+            fetchGifs(event.target.innerText)
+        })
+    })
+}
+
+// get local storage of previously searched keywords
+const getLocalStorage = () => {
+    const storagedKeywords = JSON.parse(localStorage.getItem('keywords'))
+
+    if (!storagedKeywords) {
+        return false
+    }
+
+    searchHistory = storagedKeywords
+
+    addPreviouslySearched()
+}
+
+// if previously searched keywords exist, append previous keywords on the initial render
+const addPreviouslySearched = () => {
+    if (searchHistory.length > 0) {
+        searchHistory.forEach(search => {
+            const searchBtn = document.createElement('button')
+            searchBtn.classList.add('search-btn')
+            searchBtn.innerText = `${search}`
+            searchedHistory.append(searchBtn)
+        })
+    } else if (searchHistory.length > 7) {
+        let nodes = document.querySelectorAll('.search-btn')
+        let last = nodes[nodes.length - 1]
+        last.remove()
+        searchHistory.pop()
+    } else {
+        return
+    }
+
+    document.querySelectorAll('.search-btn').forEach(btn => {
+        btn.removeEventListener('click', fetchGifs)
+        btn.addEventListener('click', (event) => {
+            fetchGifs(event.target.innerText)
+        })
+    })
+}
+
 // search keyword and call functions to retrieve data from Giphy and HumorAPI. if not keyword, then alert
 const searchKeyword = (event) => {
     event.preventDefault()
@@ -74,11 +175,8 @@ const searchKeyword = (event) => {
     console.log(keyword)
 
     if (keyword) {
-        gifContainer.innerHTML = ''
-        memeContainer.innerHTML = ''
         sectionContainer.classList.remove('hide')
-        fetchGifs()
-        fetchMemes()
+        fetchGifs(keyword)
     } else {
         alert('Please enter a keyword to search')
         return
@@ -87,3 +185,5 @@ const searchKeyword = (event) => {
 
 // addEventListeners
 searchForm.addEventListener('submit', searchKeyword)
+// getLocalStorage when script.js initially loads
+getLocalStorage()
