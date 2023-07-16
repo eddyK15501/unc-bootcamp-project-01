@@ -83,11 +83,12 @@ main {
 /* ASIDE */
 aside {
     width: 21%;
-    padding: 3.5rem 0.5rem 0 0.5rem;
+    padding: 3.5rem 0 0;
     font-family: 'Nanum Pen Script', cursive;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    position: fixed;
 }
 
 aside form {
@@ -185,6 +186,7 @@ form button:active {
 section {
     width: 79%;
     margin-bottom: 6rem;
+    margin-left: 21%;
 }
 
 /* GIF  */
@@ -283,6 +285,11 @@ hr {
 
     aside {
         width: 90%;
+        position: static;
+    }
+
+    section {
+        margin-left: 0;
     }
 
     .searched-history {
