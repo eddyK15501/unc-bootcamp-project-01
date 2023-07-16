@@ -1,4 +1,4 @@
-# Project One - Gifs and Memes
+# Gifs and Memes
 
 ## Description
 ### Caution. Do not click on the '${Project-One}' logo at the top. Unless you wish to lose brain cells.
