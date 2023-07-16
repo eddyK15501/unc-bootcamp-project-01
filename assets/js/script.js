@@ -49,7 +49,7 @@ const fetchGifs = (searchTerm) => {
             fetchMemes(searchTerm)
             addSearchTerm(searchTerm)
 
-            console.log(gifsRetrieved)
+            // console.log(gifsRetrieved)
         })
 }
 
@@ -83,7 +83,7 @@ const fetchMemes = (searchTerm) => {
                 memeContainer.append(h2Tag)
             }
 
-            console.log(memesRetrieved)
+            // console.log(memesRetrieved)
         })
 }
 
@@ -190,7 +190,7 @@ const searchKeyword = (event) => {
 
     searchInput.value = ''
     
-    console.log(keyword)
+    // console.log(keyword)
 
     if (keyword) {
         fetchGifs(keyword)
