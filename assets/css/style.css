@@ -77,6 +77,7 @@ main {
     display: flex;
     position: relative;
     top: 3.5rem;
+    padding: 0 2.5rem
 }
 
 /* ASIDE */
@@ -183,11 +184,12 @@ form button:active {
 /* SECTION */
 section {
     width: 79%;
+    margin-bottom: 6rem;
 }
 
 /* GIF  */
 .gif-main-container {
-    padding: 2.5rem 0 2.5rem;
+    padding: 2.5rem 0 6.5rem;
 }
 
 .gif-header-container {
@@ -198,7 +200,7 @@ section {
 }
 
 .gif-container {
-    padding: 0 2.5rem 2rem;
+    padding: 0 0 2rem 2.5rem;
 }
 
 #gifs-icon-img { 
@@ -210,9 +212,15 @@ section {
     margin-left: 1.5rem;
 }
 
+/* HR */
+hr {
+    background-color: #fff;
+    margin: 0 2.5rem;
+}
+
 /* MEME */
 .memes-main-container {
-    padding: 4.5rem 2.5rem 2.5rem;
+    padding: 4.5rem 0 2.5rem 2.5rem;
 }
 
 .memes-header-container {
@@ -265,6 +273,45 @@ section {
 }
 
 /* MEDIA QUERY */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 6rem;
+    }
+
+    aside {
+        width: 90%;
+    }
+
+    .searched-history {
+        display: none;
+    }
+
+    .gif-header-container {
+        justify-content: center;
+        margin: 0;
+    }
+
+    .gif-container {
+        padding: 0 0 2rem 0;
+    }
+
+    hr {
+        margin: 0;
+    }
+
+    .memes-main-container {
+        padding: 4.5rem 0 2.5rem 0;
+    }
+
+    .memes-header-container {
+        justify-content: center;
+        margin-right: 0;
+    }
+}
+
 @media screen and (max-width: 675px) {
     nav {
         padding: 0.8rem 1.9rem 0.8rem 1.9rem;
@@ -281,10 +328,20 @@ section {
     }
 
     #nav-title {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     nav ul {
-        gap: 3rem;
+        gap: 6rem;
+    }
+
+    main {
+        top: 12rem;
+    }
+}
+
+@media screen and (max-width: 372px) {
+    main {
+        padding: 0;
     }
 }
