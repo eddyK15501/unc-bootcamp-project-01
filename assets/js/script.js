@@ -16,7 +16,7 @@ let keyword = ''
 
 // fetch Gifs from Giphy API, and append them to the page
 const fetchGifs = (searchTerm) => {
-    const requestURL = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=20&&api_key=${giphyAPIKey}`
+    const requestURL = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=48&&api_key=${giphyAPIKey}`
 
     fetch(requestURL)
         .then(res => {
