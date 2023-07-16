@@ -6,5 +6,5 @@
 #### Link to the deployed application:
 https://eddyk15501.github.io/coding-bootcamp-project-01/
 
-#### Still in progress
+#### Webpage Completed
 My rendition of a sample Project One. HTML, CSS, and JavaScript. No CSS frameworks utilized.
