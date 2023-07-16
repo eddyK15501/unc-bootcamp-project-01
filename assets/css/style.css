@@ -281,11 +281,17 @@ hr {
         justify-content: center;
         align-items: center;
         top: 6rem;
+        padding: 0;
     }
 
     aside {
         width: 90%;
         position: static;
+    }
+
+    aside form {
+        width: 90%;
+        margin: 0 auto;
     }
 
     section {
