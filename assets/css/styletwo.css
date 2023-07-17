@@ -53,7 +53,17 @@ p:nth-child(1) {
 }
 
 #i-3 {
-    width: 40%;
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+#i-4 {
+    width: 25%;
+    margin-bottom: 1rem;
+}
+
+#i-5 {
+    width: 35%;
 }
 
 p:last-child {
@@ -103,6 +113,14 @@ button a {
     }
 
     #i-3 {
+        width: 80%;
+    }
+
+    #i-4 {
+        width: 80%;
+    }
+
+    #i-5 {
         width: 80%;
     }
 }
