@@ -4,68 +4,56 @@
 /* BODY */
 body {
     display: grid;
-    justify-self: center;
+    justify-items: center;
     padding: 5rem 0 5rem;
     font-size: 1.2rem;
 }
 
-/* DIV */
-.idiots {
+/* DIV-1 */
+.box-1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50%;
 }
 
-#i-one {
+.image {
     border: 1px solid black;
-    width: 700px;
-    height: 400px;
+    width: 100%;
 }
 
-#i-two {
-    border: 1px solid black;
-    width: 500px;
-    height: 450px;
-}
-
-#i-three {
-    border: 1px solid black;
-    width: 450px;
-    height: 300px;
-}
-
-#i-four {
-    border: 1px solid black;
-    width: 500px;
-    height: 350px;
-}
-
-#i-five {
-    border: 1px solid black;
-    width: 400px;
-    height: 300px;
-}
-
-#i-six {
-    border: 1px solid black;
-    width: 600px;
-    height: 400px;
-}
-
-#i-seven {
-    border: 1px solid black;
-    width: 500px;
-    height: 300px;
+#i-1 {
     margin-bottom: 48rem;
 }
 
 p {
     font-family: 'Source Code Pro', monospace;
+    text-align: center;
 }
 
 p:nth-child(1) {
     margin-bottom: 5.5rem;
+}
+
+/* DIV-2 */
+.box-2 {
+    width: 70%;
+    display: grid;
+    justify-items: center;
+}
+
+.image-2 {
+    border: 1px solid black;
+    width: 100%;
+}
+
+#i-2 {
+    width: 45%;
+}
+
+#i-3 {
+    width: 40%;
 }
 
 p:last-child {
@@ -73,11 +61,48 @@ p:last-child {
 }
 
 button {
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+    cursor: pointer;
     font-size: 1rem;
-    margin-top: 1.5rem;
-    padding: 0.3rem;
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background-color: dodgerblue;
+    border-radius: 0.3rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: #fff;
+    transition: 0.3s ease-out;
+}
+
+button:hover {
+    background-color: rgb(90, 172, 255);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.8);
 }
 
 button a {
     text-decoration: none;
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width: 768px) {
+    .box-1 {
+        width: 90%;
+    }
+
+    .box-2 {
+        width: 90%;
+    }
+
+    #i-2 {
+        width: 80%;
+    }
+
+    #i-3 {
+        width: 80%;
+    }
 }
