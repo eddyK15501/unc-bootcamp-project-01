@@ -89,20 +89,26 @@ const fetchMemes = (searchTerm) => {
 
 // function that capitalizes the first letter of the word/words, given as a parameter
 const caseSensitivity = (searchTerm) => {
-    let updateTerm = searchTerm.toLowerCase().split(" ");
+     // Remove leading and trailing spaces from the input
+    let trimmedTerm = searchTerm.trim();
+
+    // Convert the input to lowercase and split it into words
+    let updateTerm = trimmedTerm.toLowerCase().split(" ");
     let returnTerm = '';
     
     for (let i = 0; i < updateTerm.length; i++) {
+        // Capitalize the first letter of each word
         updateTerm[i] = updateTerm[i][0].toUpperCase() + updateTerm[i].slice(1);
         returnTerm += " " + updateTerm[i];
     }
-    // trim extra space, within the string being returned
+    // trim any extra space within the string being returned
     return returnTerm.trim();
 }
 
 // prepend a button into the search history if the keyword has not been searched before
 const addSearchTerm = (searchTerm) => {
     let newSearchTerm = caseSensitivity(searchTerm)
+    console.log(searchHistory)
 
     let previouslySearched = false
 
