@@ -108,7 +108,7 @@ const caseSensitivity = (searchTerm) => {
 // prepend a button into the search history if the keyword has not been searched before
 const addSearchTerm = (searchTerm) => {
     let newSearchTerm = caseSensitivity(searchTerm)
-    console.log(searchHistory)
+    // console.log(searchHistory)
 
     let previouslySearched = false
 
@@ -192,11 +192,11 @@ const searchKeyword = (event) => {
 
     let searchTerm = searchInput.value;
 
-    keyword = searchTerm
+    keyword = searchTerm.trim()
+
+    // console.log(keyword)
 
     searchInput.value = ''
-    
-    // console.log(keyword)
 
     if (keyword) {
         fetchGifs(keyword)
