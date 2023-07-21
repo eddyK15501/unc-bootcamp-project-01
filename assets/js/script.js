@@ -25,6 +25,7 @@ const fetchGifs = (searchTerm) => {
         })
         .then(data => {
             gifContainer.innerHTML = ''
+            memeContainer.innerHTML = ''
 
             let gifsRetrieved = data.data
 
@@ -60,8 +61,6 @@ const fetchMemes = (searchTerm) => {
     fetch (requestURL)
         .then(res => res.json())
         .then(data => { 
-            memeContainer.innerHTML = ''
-
             let memesRetrieved = data.memes
             
             if (memesRetrieved.length !== 0) {
