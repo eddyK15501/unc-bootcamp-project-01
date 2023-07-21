@@ -46,8 +46,6 @@ const fetchGifs = (searchTerm) => {
                 h2Tag.innerText = 'No search results were found'
                 gifContainer.append(h2Tag)
             }
-
-            fetchMemes(searchTerm)
             addSearchTerm(searchTerm)
 
             // console.log(gifsRetrieved)
@@ -84,6 +82,12 @@ const fetchMemes = (searchTerm) => {
 
             // console.log(memesRetrieved)
         })
+}
+
+// call both functions to retrieve data from API at once
+const fetchData = (keySearch) => {
+    fetchGifs(keySearch)
+    fetchMemes(keySearch)
 }
 
 // function that capitalizes the first letter of the word/words, given as a parameter
@@ -139,9 +143,9 @@ const addSearchTerm = (searchTerm) => {
     localStorage.setItem('keywords', JSON.stringify(searchHistory))
 
     document.querySelectorAll('.search-btn').forEach(btn => {
-        btn.removeEventListener('click', fetchGifs)
+        btn.removeEventListener('click', fetchData)
         btn.addEventListener('click', (event) => {
-            fetchGifs(event.target.innerText)
+            fetchData(event.target.innerText)
         })
     })
 }
@@ -178,9 +182,9 @@ const addPreviouslySearched = () => {
     }
 
     document.querySelectorAll('.search-btn').forEach(btn => {
-        btn.removeEventListener('click', fetchGifs)
+        btn.removeEventListener('click', fetchData)
         btn.addEventListener('click', (event) => {
-            fetchGifs(event.target.innerText)
+            fetchData(event.target.innerText)
         })
     })
 }
@@ -198,7 +202,7 @@ const searchKeyword = (event) => {
     searchInput.value = ''
 
     if (keyword) {
-        fetchGifs(keyword)
+        fetchData(keyword)
     } else {
         alert('Please enter a keyword to search')
         return
