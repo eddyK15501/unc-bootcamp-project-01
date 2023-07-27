@@ -1,7 +1,5 @@
 # Project One - GiphMeBaby...one more time...
 
-#### Shout-out to Britney Spears
-
 #### Caution. Do not click on the '${Project-One}' logo at the top. Unless you wish to lose brain cells.
 
 ## Link to the deployed application:
