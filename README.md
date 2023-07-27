@@ -1,10 +1,11 @@
-# Project One - Gifs and Memes
+# Project One - GiphMeBaby...one more time...
 
-## Description
-### Caution. Do not click on the '${Project-One}' logo at the top. Unless you wish to lose brain cells.
+#### Shout-out to Britney Spears
 
-#### Link to the deployed application:
+#### Caution. Do not click on the '${Project-One}' logo at the top. Unless you wish to lose brain cells.
+
+## Link to the deployed application:
 https://eddyk15501.github.io/coding-bootcamp-project-01/
 
-#### Webpage Completed
-My rendition of a sample Project One. HTML, CSS, and JavaScript. No CSS frameworks utilized.
+## Description
+My rendition of a sample Project One, at the UNC coding bootcamp. HTML, CSS, and JavaScript. No CSS frameworks utilized in this build.
