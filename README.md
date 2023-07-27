@@ -1,4 +1,4 @@
-# Project One - GifMeBaby
+# Project One
 
 #### Caution. Do not click on the '${Project-One}' logo at the top. Unless you wish to lose brain cells.
 
