@@ -8,4 +8,4 @@
 https://eddyk15501.github.io/coding-bootcamp-project-01/
 
 ## Description
-My rendition of a sample Project One, at the UNC coding bootcamp. HTML, CSS, and JavaScript. No CSS frameworks utilized in this build.
+Rendition of a sample Project One, at the UNC coding bootcamp. HTML, CSS, and JavaScript. No CSS frameworks utilized in this build.
