@@ -1,6 +1,7 @@
 # Project One
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-#### Caution. Do not click on the '${Project-One}' logo at the top. Unless you wish to lose brain cells.
+* ### Do not click on the '${Project-One}' logo at the top. Unless you wish to lose brain cells.
 
 ## Link to the deployed application:
 [https://eddyk15501.github.io/unc-bootcamp-project-01/](https://eddyk15501.github.io/unc-bootcamp-project-01/)
